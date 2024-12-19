@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("maxkikiti01 multi-hub", "Serpent")
+local Window = Library.CreateLib("MAXI HUB", "Serpent")
 
 
 -------------------------------------- Tab -----------------------------------------------------------------
