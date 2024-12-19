@@ -87,7 +87,7 @@ Section:NewButton("IY_FE", "Я не знаю что ТУТ говорить", fu
     loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
 Section:NewButton("invisible Press X", "Press X to become invisible", function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/kotMa0s1n/maxkiti01/refs/heads/main/Inviz.lua')()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/kotMa0s1n/maxkiti01/refs/heads/main/Inviz.lua'))()
 end)
 --------------------------------------- Universal -------------------------------------------------
 local Tab = Window:NewTab("Universal")
