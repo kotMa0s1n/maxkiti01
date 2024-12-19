@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("MAXI HUB v1.5", "Serpent")
+local Window = Library.CreateLib("MAXI HUB v1.5.1", "Serpent")
 
 
 -------------------------------------- Tab -----------------------------------------------------------------
@@ -74,6 +74,9 @@ Section:NewButton("Creatures of Sonaria", "Lunar", function()
 end)
 Section:NewButton("Emergency Hamburg", "AirFlow", function()
     loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/d8bf54daa5b358826ce74cab275f9135.lua"))()
+end)
+Section:NewButton("Fling Things and People (Key: WhoeverMoveFirstIsGay)", "Bliz", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/BlizTBr/scripts/main/FTAP.lua"))()
 end)
 ------------------------------------ Extra scripts -------------------------------------------
 local Tab = Window:NewTab("Other Scripts")
