@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("MAXI HUB", "Serpent")
+local Window = Library.CreateLib("MAXI HUB v1.5", "Serpent")
 
 
 -------------------------------------- Tab -----------------------------------------------------------------
@@ -76,6 +76,7 @@ Section:NewButton("Emergency Hamburg", "AirFlow", function()
     loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/d8bf54daa5b358826ce74cab275f9135.lua"))()
 end)
 ------------------------------------ Extra scripts -------------------------------------------
+local Tab = Window:NewTab("Other Scripts")
 local Section = Tab:NewSection("Other Scripts")
 Section:NewButton("Visual", "1\4 rivals :3", function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Actyrn/Scripts/main/AzureModded"))()
