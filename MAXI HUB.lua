@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("MAXI HUB v1.5.1", "Serpent")
+local Window = Library.CreateLib("MAXI HUB v1.5.2", "Serpent")
 
 
 -------------------------------------- Tab -----------------------------------------------------------------
@@ -92,6 +92,9 @@ Section:NewButton("IY_FE", "Я не знаю что ТУТ говорить", fu
 end)
 Section:NewButton("invisible Press X", "Press X to become invisible", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/kotMa0s1n/maxkiti01/refs/heads/main/Inviz.lua'))()
+end)
+Section:NewButton("Anti-AFK", "No kick afk", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/kotMa0s1n/maxkiti01/refs/heads/main/anti-afk.lua"))()
 end)
 --------------------------------------- Universal -------------------------------------------------
 local Tab = Window:NewTab("Universal")
