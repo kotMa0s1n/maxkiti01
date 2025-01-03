@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("MAXI HUB v1.6.3", "Serpent")
+local Window = Library.CreateLib("MAXI HUB v1.6.5", "Serpent")
 
 
 -------------------------------------- Tab -----------------------------------------------------------------
@@ -92,6 +92,9 @@ Section:NewButton("Aim (NOT AIM BOT)", "All games", function()
 end)
 Section:NewButton("Aim Bot (Key✅)", "https://discord.gg/hKN3QDYCV8", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/RobloxMasterAyla/AzureModdedUniversal/refs/heads/main/AzureModded.lua"))()
+end)
+Section:NewButton("Aim Bot (Key❌)", "Auto Clicker, ESP & More", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/b8QDUqJ8"))()
 end)
 Section:NewButton("IY_FE", "Best universal script", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
