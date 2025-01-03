@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("MAXI HUB v1.6.0", "Serpent")
+local Window = Library.CreateLib("MAXI HUB v1.6.2", "Serpent")
 
 
 -------------------------------------- Tab -----------------------------------------------------------------
@@ -77,6 +77,9 @@ Section:NewButton("Fling Things and People | Key: ---------->", "Bliz_T", functi
 end)
 Section:NewButton("Brookhaven", "DarkoneMarcillise", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/TheDarkoneMarcillisePex/Other-Scripts/main/Brook%20Haven%20Gui'))()
+end)
+Section:NewButton("Taxi Boss", "???", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/loadstringguy/taxi-boss/refs/heads/main/script.lua"))()
 end)
 ------------------------------------ Extra scripts -------------------------------------------
 local Tab = Window:NewTab("Other Scripts")
