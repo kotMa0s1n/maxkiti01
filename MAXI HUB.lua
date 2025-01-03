@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("MAXI HUB v1.5.5", "Serpent")
+local Window = Library.CreateLib("MAXI HUB v1.5.8", "Serpent")
 
 
 -------------------------------------- Tab -----------------------------------------------------------------
@@ -114,6 +114,9 @@ Section:NewButton("AnitCheat Bypass", "Works in most games but not all", functio
     end)
 Section:NewButton("UNC Check", "Checks UNC of your injector", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/kotMa0s1n/maxkiti01/refs/heads/main/UNC.lua"))()
+end)
+Section:NewButton("Invisible", "Press X", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/kotMa0s1n/maxkiti01/refs/heads/main/Inviz.lua"))()
 end)
 ------------------------------------------------- Settings -----------------------------------------------------
 local Tab = Window:NewTab("Settings")
