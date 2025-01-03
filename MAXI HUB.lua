@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("MAXI HUB v1.6.2", "Serpent")
+local Window = Library.CreateLib("MAXI HUB v1.6.3", "Serpent")
 
 
 -------------------------------------- Tab -----------------------------------------------------------------
@@ -89,6 +89,9 @@ Section:NewButton("Visual", "1\4 rivals :3", function()
 end)
 Section:NewButton("Aim (NOT AIM BOT)", "All games", function()
     loadstring(game:HttpGet"https://raw.githubusercontent.com/HtB1526/ArceusX_Scripts/refs/heads/main/Scripts/easy_crosshair.lua")()
+end)
+Section:NewButton("Aim Bot (Key✅)", "https://discord.gg/hKN3QDYCV8", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/RobloxMasterAyla/AzureModdedUniversal/refs/heads/main/AzureModded.lua"))()
 end)
 Section:NewButton("IY_FE", "Best universal script", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
