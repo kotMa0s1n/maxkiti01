@@ -17,4 +17,3 @@ ab.TextColor3=Color3.new(1,1,1)ab.TextSize=20;local bb=game:service'VirtualUser'
 game:service'Players'.LocalPlayer.Idled:connect(function()
 bb:CaptureController()bb:ClickButton2(Vector2.new())
 ab.Text="You went idle and ROBLOX tried to kick you but we reflected it!"wait(2)ab.Text="Script beat off the kick"end)
-loadstring(game:HttpGet"https://raw.githubusercontent.com/Freebobux228rblx/Freebobux228_scripts/main/babft-autofarm.lua")("funpay.com/users/6412543/")
