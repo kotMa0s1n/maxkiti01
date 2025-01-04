@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("MAXI HUB v1.6.8b", "Serpent")
+local Window = Library.CreateLib("MAXI HUB v1.6.8-b.1", "Serpent")
 
 
 -------------------------------------- Tab -----------------------------------------------------------------
@@ -38,11 +38,11 @@ Section:NewButton("Brookhaven", "By:  DarkoneMarcillise", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/TheDarkoneMarcillisePex/Other-Scripts/main/Brook%20Haven%20Gui'))()
 end)
 
-Section:NewButton("Build a Boat for Treasure (Only ) (Best)", "By: ???", function()
+Section:NewButton("Build a Boat for Treasure (Only phone) (Best)", "By: ???", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/catblox1346/BBHscript/main/owo"))()
 end)
 
-Section:NewButton("Build a Boat for Treasure -- AUTO-FARM (Only PC) (Best)", "Real Best", function()
+Section:NewButton("Build a Boat for Treasure - AUTO-FARM (Only PC)", "Real Best", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Waza80/scripts-new/main/BuildABoat.lua"))("t.me/+gyH9PbgbmdwwMTky")
 end)
 
