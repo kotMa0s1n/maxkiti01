@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("MAXI HUB v1.6.8-b.2", "Serpent")
+local Window = Library.CreateLib("MAXI HUB v1.6.9", "Serpent")
 
 
 -------------------------------------- Tab -----------------------------------------------------------------
@@ -56,6 +56,10 @@ end)
 
 Section:NewButton("Epic Minigames", "Cheat All level", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SlamminPig/rblxgames/main/Epic%20Minigames/EpicMinigamesGUI"))()
+end)
+
+Section:NewButton("Evade", "By: King hud", function()
+    loadstring(game:HttpGet("https://scriptblox.com/raw/Evade-Evade-The-Best-Free-GUI-Script-lots-of-Features-20718"))()
 end)
 
 Section:NewButton("Emergency Hamburg", "By: AirFlow", function()
