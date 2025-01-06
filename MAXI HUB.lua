@@ -2,6 +2,8 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
 local Window = Library.CreateLib("MAXI HUB v1.6.9", "Serpent")
 
 
+
+
 -------------------------------------- Tab -----------------------------------------------------------------
 --local Tab = Window:NewTab("Game Scripts")
 local Tab = Window:NewTab("Scripts")
@@ -195,7 +197,9 @@ local Tab = Window:NewTab("Settings")
 local Section = Tab:NewSection("Settings close")
 
 
-Section:NewKeybind("Toggle UI", "Toggle's UI", Enum.KeyCode.RightShift, function()
+Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
+	end)
+Section:NewKeybind("Toggle UI", "Toggle's UI", Enum.KeyCode.RightCtrl, function()
 	Library:ToggleUI()
 end)
 
