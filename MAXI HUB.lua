@@ -1,6 +1,6 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("MAXI HUB v1.6.9", "Serpent")
 
+local Window = Library.CreateLib("MAXI HUB v1.7.0 B-1", color)
 
 
 
@@ -197,9 +197,7 @@ local Tab = Window:NewTab("Settings")
 local Section = Tab:NewSection("Settings close")
 
 
-Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
-	end)
-Section:NewKeybind("Toggle UI", "Toggle's UI", Enum.KeyCode.RightCtrl, function()
+Section:NewKeybind("Toggle UI", "Toggle's UI", Enum.KeyCode.RightControl, function()
 	Library:ToggleUI()
 end)
 
