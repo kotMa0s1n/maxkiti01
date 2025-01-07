@@ -1,6 +1,6 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
-local Window = Library.CreateLib("MAXI HUB v1.7.0 B-1", color)
+local Window = Library.CreateLib("MAXI HUB v1.7.1", color)
 
 
 
@@ -110,6 +110,10 @@ end)
 
 Section:NewButton("Prison Life", "By:  Zephyr", function()
     loadstring(game:HttpGet"https://raw.githubusercontent.com/Unknownlodfc/Zephyr/refs/heads/main/Zephyr%20%7C%20Prison%20Life")()
+end)
+
+Section:NewButton("Pressure (KEY)", "By:  c-a-t-s-u-s", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/3345-c-a-t-s-u-s/Kncrypt/refs/heads/main/sources/Pressure.lua"))()
 end)
 
 Section:NewButton("Starving Artist", "Copy Art", function()
