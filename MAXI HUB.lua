@@ -1,6 +1,6 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
-local Window = Library.CreateLib("MAXI HUB v1.7.2", "BloodTheme")
+local Window = Library.CreateLib("MAXI HUB v1.7.3", "BloodTheme")
 
 
 
@@ -110,6 +110,10 @@ end)
 
 Section:NewButton("Prison Life", "By:  Zephyr", function()
     loadstring(game:HttpGet"https://raw.githubusercontent.com/Unknownlodfc/Zephyr/refs/heads/main/Zephyr%20%7C%20Prison%20Life")()
+end)
+
+Section:NewButton("Pets Go (Only phone)", "AtherHub", function()
+    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/2529a5f9dfddd5523ca4e22f21cceffa.lua"))()
 end)
 
 Section:NewButton("Pressure (KEY)", "By:  c-a-t-s-u-s", function()
