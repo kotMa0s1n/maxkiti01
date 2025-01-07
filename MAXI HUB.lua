@@ -1,6 +1,6 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
-local Window = Library.CreateLib("MAXI HUB v1.7.1", color)
+local Window = Library.CreateLib("MAXI HUB v1.7.2", "BloodTheme")
 
 
 
