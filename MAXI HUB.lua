@@ -1,6 +1,6 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
-local Window = Library.CreateLib("MAXI HUB v1.7.3", "BloodTheme")
+local Window = Library.CreateLib("MAXI HUB v1.7.4", "BloodTheme")
 
 
 
@@ -168,6 +168,9 @@ Section:NewButton("Visual shit", "1\4 rivals :3", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Actyrn/Scripts/main/AzureModded"))()
 end)
 
+Section:NewButton("18+ troll (R6 and R15)", "R6 and R15", function()
+		loadstring(game:HttpGet("https://pastebin.com/raw/38Jra00x"))(
+end)
 
 --------------------------------------- Universal -------------------------------------------------
 local Tab = Window:NewTab("Universal")
