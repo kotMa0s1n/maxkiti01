@@ -124,7 +124,7 @@ Section:NewButton("Starving Artist", "Copy Art", function()
     loadstring(game:HttpGet("https://pastebin.com/raw/aCFfd9Uq"))()
 end)
 
-Section:NewButton("Shrimp Game", "Win Game", function()
+Section:NewButton("Shrimp Game (KEY)", "Win Game", function()
 	loadstring(game:HttpGet("https://pastebin.com/raw/gS2CPyMk"))()
 end)
 
