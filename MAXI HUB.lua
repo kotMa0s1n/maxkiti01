@@ -1,6 +1,6 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
-local Window = Library.CreateLib("MAXI HUB v1.7.4", "BloodTheme")
+local Window = Library.CreateLib("MAXI HUB v1.7.5", "BloodTheme")
 
 
 
@@ -122,6 +122,10 @@ end)
 
 Section:NewButton("Starving Artist", "Copy Art", function()
     loadstring(game:HttpGet("https://pastebin.com/raw/aCFfd9Uq"))()
+end)
+
+Section:NewButton("Shrimp Game", "Win Game", function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/gS2CPyMk"))()
 end)
 
 Section:NewButton("Taxi Boss", "By:  ???", function()
