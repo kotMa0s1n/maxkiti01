@@ -169,7 +169,7 @@ Section:NewButton("Visual shit", "1\4 rivals :3", function()
 end)
 
 Section:NewButton("18+ troll (R6 and R15)", "R6 and R15", function()
-		loadstring(game:HttpGet("https://pastebin.com/raw/38Jra00x"))(
+		loadstring(game:HttpGet("https://pastebin.com/raw/38Jra00x"))()
 end)
 
 --------------------------------------- Universal -------------------------------------------------
