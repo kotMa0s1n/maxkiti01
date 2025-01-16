@@ -1,6 +1,6 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
-local Window = Library.CreateLib("MAXI HUB v1.7.5", "BloodTheme")
+local Window = Library.CreateLib("MAXI HUB v1.7.6", "BloodTheme")
 
 
 
@@ -44,8 +44,8 @@ Section:NewButton("Build a Boat for Treasure (Best)", "By: ???", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/catblox1346/BBHscript/main/owo"))()
 end)
 
-Section:NewButton("Build a Boat for Treasure - AUTO-FARM (Only PC)", "Real Best", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Waza80/scripts-new/main/BuildABoat.lua"))("t.me/+gyH9PbgbmdwwMTky")
+Section:NewButton("Build a Boat for Treasure - AUTO-FARM", "Real Best", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/catblox1346/BasketScripts/main/AutoFarms/SpeedFarmBabft"))()
 end)
 
 Section:NewButton("Creatures of Sonaria", "By: Lunar", function()
