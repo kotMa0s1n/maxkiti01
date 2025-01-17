@@ -1,6 +1,6 @@
  local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
-local Window = Library.CreateLib("MAXI HUB v1.8.6", theme)
+local Window = Library.CreateLib("MAXI HUB v1.8.7", theme)
 
 
 
@@ -82,6 +82,10 @@ end)
 
 Section:NewButton("Gun Grounds FFA", "By:  agreed69", function()
     loadstring(game:HttpGet"https://raw.githubusercontent.com/agreed69-scripts/open-src-scripts/refs/heads/main/Gun%20Grounds%20FFA.lua")()
+end)
+
+Section:NewButton("Isle 10", "By:  SpineWave", function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/SpineWare/UniversalLoader/refs/heads/main/Load"))()
 end)
 
 Section:NewButton("Jailbarke", "Auto Farm", function()
