@@ -1,6 +1,6 @@
  local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
-local Window = Library.CreateLib("MAXI HUB v1.8.5", theme)
+local Window = Library.CreateLib("MAXI HUB v1.8.6", theme)
 
 
 
@@ -160,6 +160,18 @@ Section:NewButton("⭐ IY_FE", "Best universal script", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
 
+
+
+Section:NewButton("1️⃣⭐ Chat Draw", "By:  OCFI", function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/ocfi/_/refs/heads/main/a"))()
+end)
+
+Section:NewButton("2️⃣ Chat Draw", "By:  ???", function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/s5rtS3DB"))()
+end)
+
+
+
 Section:NewButton("1️⃣ Invisible (ONLY PC) (It doesn't work well)", "Press X to become invisible", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/kotMa0s1n/maxkiti01/refs/heads/main/Inviz.lua'))()
 end)
@@ -168,12 +180,14 @@ Section:NewButton("2️⃣ Invisible Button (NO PRESS X, PLS)", "GUI button", fu
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Luarmor123/community-Y-HUB/refs/heads/main/invisible-button"))()
 end)
 
+
+
 Section:NewButton("Visual shit", "1\4 rivals :3", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Actyrn/Scripts/main/AzureModded"))()
 end)
 
 Section:NewButton("18+ troll (R6 and R15)", "R6 and R15", function()
-		loadstring(game:HttpGet("https://pastebin.com/raw/38Jra00x"))()
+    loadstring(game:HttpGet("https://pastebin.com/raw/38Jra00x"))()
 end)
 
 --------------------------------------- Universal -------------------------------------------------
