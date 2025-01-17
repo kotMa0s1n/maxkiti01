@@ -1,6 +1,6 @@
  local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
-local Window = Library.CreateLib("MAXI HUB v1.8.4", theme)
+local Window = Library.CreateLib("MAXI HUB v1.8.5", theme)
 
 
 
@@ -9,7 +9,7 @@ local Window = Library.CreateLib("MAXI HUB v1.8.4", theme)
 local Tab = Window:NewTab("Scripts")
 -------------------------------------- Game Scripts ---------------------------------------------------------
 local Section = Tab:NewSection("Game Scripts")
-
+local Section = Tab:NewSection("⭐ - best | 🔑 - key sistem")
 
 Section:NewButton("⭐ Arsenal", "90% ban )", function()
     loadstring(game:HttpGet('https://pastebin.com/raw/8ysy7ENG',true))()
