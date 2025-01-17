@@ -1,6 +1,6 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
-local Window = Library.CreateLib("MAXI HUB v1.8.1", theme)
+local Window = Library.CreateLib("MAXI HUB v1.8.2", theme)
 
 
 
@@ -189,6 +189,59 @@ Section:NewSlider("JumpPower", "Changes JumpPower", 500, 50, function(v) -- 500 
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
     game.Players.LocalPlayer.Character.Humanoid.JumpHeight = v
 end)
+
+
+
+Section:NewButton("Infinite jump", "???", function()
+
+    local Player = game:GetService'Players'.LocalPlayer;
+local UIS = game:GetService'UserInputService';
+ 
+_G.JumpHeight = 50;
+ 
+function Action(Object, Function) if Object ~= nil then Function(Object); end end
+ 
+UIS.InputBegan:connect(function(UserInput)
+if UserInput.UserInputType == Enum.UserInputType.Keyboard and UserInput.KeyCode == Enum.KeyCode.Space then
+Action(Player.Character.Humanoid, function(self)
+if self:GetState() == Enum.HumanoidStateType.Jumping or self:GetState() == Enum.HumanoidStateType.Freefall then
+Action(self.Parent.HumanoidRootPart, function(self)
+self.Velocity = Vector3.new(0, _G.JumpHeight, 0);
+end)
+end
+end)
+end
+end)
+
+end)
+
+
+		
+Section:NewButton("Reset", "???", function()
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+
+
+		
+Section:NewButton("Rejoin", "???", function()
+    local TeleportService = game:GetService("TeleportService")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+ 
+local Rejoin = coroutine.create(function()
+    local Success, ErrorMessage = pcall(function()
+        TeleportService:Teleport(game.PlaceId, LocalPlayer)
+    end)
+ 
+    if ErrorMessage and not Success then
+        warn(ErrorMessage)
+    end
+end)
+ 
+coroutine.resume(Rejoin)
+end)
+
+
 
 local Section = Tab:NewSection("Universal Script")
 
