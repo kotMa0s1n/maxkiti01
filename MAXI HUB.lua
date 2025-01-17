@@ -1,6 +1,6 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
-local Window = Library.CreateLib("MAXI HUB v1.8.0", theme)
+local Window = Library.CreateLib("MAXI HUB v1.8.1", theme)
 
 
 
@@ -11,7 +11,7 @@ local Tab = Window:NewTab("Scripts")
 local Section = Tab:NewSection("Game Scripts")
 
 
-Section:NewButton("Arsenal (BEEEEEEEEEST)", "90% ban )", function()
+Section:NewButton("Arsenal (BEST)", "90% ban )", function()
     loadstring(game:HttpGet('https://pastebin.com/raw/8ysy7ENG',true))()
 end)
 
@@ -40,11 +40,11 @@ Section:NewButton("Brookhaven", "By:  DarkoneMarcillise", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/TheDarkoneMarcillisePex/Other-Scripts/main/Brook%20Haven%20Gui'))()
 end)
 
-Section:NewButton("Build a Boat for Treasure (Best)", "By: ???", function()
+Section:NewButton("1️⃣ Build a Boat for Treasure (BEST)", "By: ???", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/catblox1346/BBHscript/main/owo"))()
 end)
 
-Section:NewButton("Build a Boat for Treasure - AUTO-FARM", "Real Best", function()
+Section:NewButton("2️⃣ Build a Boat for Treasure - AUTO-FARM", "Real Best", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/catblox1346/BasketScripts/main/AutoFarms/SpeedFarmBabft"))()
 end)
 
@@ -76,7 +76,7 @@ Section:NewButton("Funky Friday", "beep beep bobobobo beep beep", function()
     loadstring(game:HttpGet('https://pastebin.com/raw/dcyuEgyK'))()
 end)
 
-Section:NewButton("Fling Things and People", "By: Bliz_T", function()
+Section:NewButton("Fling Things and People (KEY) (BEST)", "By: Bliz_T", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/BlizTBr/scripts/main/FTAP.lua"))()
 end)
 
