@@ -8,8 +8,8 @@ local Window = Library.CreateLib("MAXI HUB v1.8.5", theme)
 --local Tab = Window:NewTab("Game Scripts")
 local Tab = Window:NewTab("Scripts")
 -------------------------------------- Game Scripts ---------------------------------------------------------
+local Section = Tab:NewSection("*⭐ - best | 🔑 - key sistem")
 local Section = Tab:NewSection("Game Scripts")
-local Section = Tab:NewSection("⭐ - best | 🔑 - key sistem")
 
 Section:NewButton("⭐ Arsenal", "90% ban )", function()
     loadstring(game:HttpGet('https://pastebin.com/raw/8ysy7ENG',true))()
