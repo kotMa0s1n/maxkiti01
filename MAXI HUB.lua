@@ -1,6 +1,6 @@
  local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
-local Window = Library.CreateLib("MAXI HUB v1.8.7", theme)
+local Window = Library.CreateLib("MAXI HUB v1.8.8", theme)
 
 
 
@@ -48,7 +48,11 @@ Section:NewButton("2️⃣⭐ Build a Boat for Treasure - AUTO-FARM", "Real Best
     loadstring(game:HttpGet("https://raw.githubusercontent.com/catblox1346/BasketScripts/main/AutoFarms/SpeedFarmBabft"))()
 end)
 
-Section:NewButton("Creatures of Sonaria", "By: Lunar", function()
+Section:NewButton("⭐ Blade ball (NO ANTI-AFK)", "By:  TAXUS", function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/funhaji/Blade-Ball/refs/heads/main/No-Lag.lua", true))()
+end)
+
+Section:NewButton("Creatures of Sonaria", "By:  Lunar", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Mangnex/Lunar-Hub/refs/heads/main/FreeLoader.lua"))()
 end)
 
@@ -85,7 +89,7 @@ Section:NewButton("Gun Grounds FFA", "By:  agreed69", function()
 end)
 
 Section:NewButton("Isle 10", "By:  SpineWave", function()
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/SpineWare/UniversalLoader/refs/heads/main/Load"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/SpineWare/UniversalLoader/refs/heads/main/Load"))()
 end)
 
 Section:NewButton("Jailbarke", "Auto Farm", function()
@@ -122,6 +126,10 @@ end)
 
 Section:NewButton("Pressure (🔑)", "By:  c-a-t-s-u-s", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/3345-c-a-t-s-u-s/Kncrypt/refs/heads/main/sources/Pressure.lua"))()
+end)
+
+Section:NewButton("Ro-Ghoul", "By:  PorryDepTrai", function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PorryDepTrai/exploit/main/DashBoostSolora.lua"))()
 end)
 
 Section:NewButton("Starving Artist", "Copy Art", function()
@@ -167,11 +175,11 @@ end)
 
 
 Section:NewButton("1️⃣⭐ Chat Draw", "By:  OCFI", function()
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/ocfi/_/refs/heads/main/a"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/ocfi/_/refs/heads/main/a"))()
 end)
 
 Section:NewButton("2️⃣ Chat Draw", "By:  ???", function()
-   loadstring(game:HttpGet("https://pastebin.com/raw/s5rtS3DB"))()
+	loadstring(game:HttpGet("https://pastebin.com/raw/s5rtS3DB"))()
 end)
 
 
