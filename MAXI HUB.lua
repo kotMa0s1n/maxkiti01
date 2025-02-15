@@ -1,6 +1,6 @@
  local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
-local Window = Library.CreateLib("MAXI HUB v1.8.8", theme)
+local Window = Library.CreateLib("MAXI HUB v1.8.9", theme)
 
 
 
@@ -36,6 +36,14 @@ Section:NewButton("Break In 2", "By:  Starry", function()
     loadstring(game:HttpGet("https://luau.tech/build"))()
 end)
 
+Section:NewButton("1️⃣ Blade ball (NO ANTI-AFK)", "By:  TAXUS", function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/funhaji/Blade-Ball/refs/heads/main/No-Lag.lua", true))()
+end)
+
+Section:NewButton("2️⃣⭐ Blade ball", "By:  TheDarkone", function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/TheDarkoneMarcillisePex/Other-Scripts/refs/heads/main/BladeBall%20GUI'))()
+end)
+
 Section:NewButton("Brookhaven", "By:  DarkoneMarcillise", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/TheDarkoneMarcillisePex/Other-Scripts/main/Brook%20Haven%20Gui'))()
 end)
@@ -46,10 +54,6 @@ end)
 
 Section:NewButton("2️⃣⭐ Build a Boat for Treasure - AUTO-FARM", "Real Best", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/catblox1346/BasketScripts/main/AutoFarms/SpeedFarmBabft"))()
-end)
-
-Section:NewButton("⭐ Blade ball (NO ANTI-AFK)", "By:  TAXUS", function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/funhaji/Blade-Ball/refs/heads/main/No-Lag.lua", true))()
 end)
 
 Section:NewButton("Creatures of Sonaria", "By:  Lunar", function()
@@ -108,6 +112,10 @@ Section:NewButton("3️⃣ Lumber Tycoon 2", "By:  Kron", function()
 end)
 
 
+Section:NewButton("Live Topia", "By:  TheDarkone", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/TheDarkoneMarcillisePex/Other-Scripts/main/Live%20Topia%20GUI'))()
+end)
+
 Section:NewButton("Murder Mystery 2", "ESP (no gun)", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Ihaveash0rtnamefordiscord/Releases/main/MurderMystery2HighlightESP"))(' Watermelon ?')
 end)
@@ -116,9 +124,15 @@ Section:NewButton("Nanny", "By:  Zephyr", function()
     loadstring(game:HttpGet"https://raw.githubusercontent.com/Unknownlodfc/Zephyr/refs/heads/main/Zephyr%20%7C%20Nanny")()
 end)
 
-Section:NewButton("Prison Life", "By:  Zephyr", function()
+
+Section:NewButton("1️⃣ Prison Life (Only phone)", "By:  Zephyr", function()
     loadstring(game:HttpGet"https://raw.githubusercontent.com/Unknownlodfc/Zephyr/refs/heads/main/Zephyr%20%7C%20Prison%20Life")()
 end)
+
+Section:NewButton("2️⃣ Prison Life", "By:  TheDarkone", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/TheDarkoneMarcillisePex/Other-Scripts/main/Prison%20Life%20GUI'))()
+end)
+
 
 Section:NewButton("Pets Go (Only phone)", "AtherHub", function()
     loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/2529a5f9dfddd5523ca4e22f21cceffa.lua"))()
