@@ -1,6 +1,6 @@
  local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
-local Window = Library.CreateLib("MAXI HUB v1.8.9", theme)
+local Window = Library.CreateLib("MAXI HUB v1.9.0", theme)
 
 
 
@@ -31,10 +31,6 @@ Section:NewButton("Bed Wars", "By:  VAPE V4", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/cocotv666/Aurora/main/Aurora_Loader"))()
 end)
 
-Section:NewButton("Break In 2", "By:  Starry", function()
-    getgenv().ignoreGameCheck = false;
-    loadstring(game:HttpGet("https://luau.tech/build"))()
-end)
 
 Section:NewButton("1️⃣ Blade ball (NO ANTI-AFK)", "By:  TAXUS", function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/funhaji/Blade-Ball/refs/heads/main/No-Lag.lua", true))()
@@ -44,9 +40,21 @@ Section:NewButton("2️⃣⭐ Blade ball", "By:  TheDarkone", function()
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/TheDarkoneMarcillisePex/Other-Scripts/refs/heads/main/BladeBall%20GUI'))()
 end)
 
-Section:NewButton("Brookhaven", "By:  DarkoneMarcillise", function()
+
+Section:NewButton("Break In 2", "By:  Starry", function()
+    getgenv().ignoreGameCheck = false;
+    loadstring(game:HttpGet("https://luau.tech/build"))()
+end)
+
+
+Section:NewButton("1️⃣⭐ Brookhaven", "By:  TheDarkone", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/TheDarkoneMarcillisePex/Other-Scripts/main/Brook%20Haven%20Gui'))()
 end)
+
+Section:NewButton("2️⃣ Brookhaven", "By:  SANDER X", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/sXPiterXs1111/SanderXV2.65/main/sanderXNewV2.65.lua'))()
+end)
+
 
 Section:NewButton("1️⃣⭐ Build a Boat for Treasure", "By: ???", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/catblox1346/BBHscript/main/owo"))()
@@ -55,6 +63,7 @@ end)
 Section:NewButton("2️⃣⭐ Build a Boat for Treasure - AUTO-FARM", "Real Best", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/catblox1346/BasketScripts/main/AutoFarms/SpeedFarmBabft"))()
 end)
+
 
 Section:NewButton("Creatures of Sonaria", "By:  Lunar", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Mangnex/Lunar-Hub/refs/heads/main/FreeLoader.lua"))()
