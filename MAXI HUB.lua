@@ -101,7 +101,7 @@ Section:NewButton("Gun Grounds FFA", "By:  agreed69", function()
     loadstring(game:HttpGet"https://raw.githubusercontent.com/agreed69-scripts/open-src-scripts/refs/heads/main/Gun%20Grounds%20FFA.lua")()
 end)
 
-Section:NewButton("Isle 10", "By:  SpineWave", function()
+Section:NewButton("⭐ Isle 10", "By:  SpineWave", function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/SpineWare/UniversalLoader/refs/heads/main/Load"))()
 end)
 
@@ -116,7 +116,7 @@ end)
 Section:NewButton("2️⃣ Lumber Tycoon 2", "By:  Better Hub", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/Butterisgood/Butter/main/Root2.lua'))()
 end)
-Section:NewButton("3️⃣ Lumber Tycoon 2", "By:  Kron", function()
+Section:NewButton("3️⃣⭐ Lumber Tycoon 2", "By:  Kron", function()
     loadstring(game:HttpGet"https://raw.githubusercontent.com/DevKron/Kron_Hub/refs/heads/main/version_1.0")()
 end)
 
