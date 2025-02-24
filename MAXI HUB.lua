@@ -167,6 +167,9 @@ Section:NewButton("Taxi Boss", "By:  ???", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/loadstringguy/taxi-boss/refs/heads/main/script.lua"))()
 end)
 
+Section:NewButton("The Strongest Battlegrounds Trash-Man", "By:  ???", function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/yes1nt/yes/refs/heads/main/Trashcan%20Man", true))()
+end)
 
 
 
