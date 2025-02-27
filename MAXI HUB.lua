@@ -55,6 +55,10 @@ Section:NewButton("2️⃣ Brookhaven", "By:  SANDER X", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/sXPiterXs1111/SanderXV2.65/main/sanderXNewV2.65.lua'))()
 end)
 
+Section:NewButton("3️⃣ Brookhaven", "By:  SP Hub", function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/as6cd0/SP_Hub/refs/heads/main/Brookhaven"))()
+end)
+
 
 Section:NewButton("1️⃣⭐ Build a Boat for Treasure", "By: ???", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/catblox1346/BBHscript/main/owo"))()
