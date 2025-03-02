@@ -71,25 +71,29 @@ local function updateAimbot()
     end
 end
 
--- Обработчик нажатия правой кнопки мыши
-UserInputService.InputBegan:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton2 then  -- Проверка на правую кнопку мыши
-        toggleAimbot()  -- Переключаем aimbot при нажатии правой кнопки
-    end
-end)
-
 -- Подключите функцию обновления Aimbot к событию RenderStepped
 local aimbotConnection
 
+-- Обработчик нажатия правой кнопки мыши (начало удержания)
 UserInputService.InputBegan:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton2 then
-        if aimbotEnabled then
-            FOVring:Remove()
-            aimbotConnection:Disconnect()
-        else
+    if input.UserInputType == Enum.UserInputType.MouseButton2 then  -- Проверка на правую кнопку мыши
+        if not aimbotEnabled then
+            toggleAimbot()  -- Включаем aimbot при нажатии правой кнопки
             FOVring.Position = workspace.CurrentCamera.ViewportSize / 2
             FOVring.Radius = config.FOV
             aimbotConnection = RunService.RenderStepped:Connect(updateAimbot)
+        end
+    end
+end)
+
+-- Обработчик отпускания правой кнопки мыши (остановка удержания)
+UserInputService.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton2 then  -- Проверка на правую кнопку мыши
+        if aimbotEnabled then
+            toggleAimbot()  -- Отключаем aimbot, когда правая кнопка отпущена
+            if aimbotConnection then
+                aimbotConnection:Disconnect()  -- Отключаем обновление
+            end
         end
     end
 end)
