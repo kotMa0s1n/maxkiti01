@@ -1,6 +1,6 @@
  local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
-local Window = Library.CreateLib("🌿MAXI HUB v1.9.0", theme)
+local Window = Library.CreateLib("🌿MAXI HUB v1.9.1", theme)
 
 
 
@@ -129,9 +129,19 @@ Section:NewButton("Live Topia", "By:  TheDarkone", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/TheDarkoneMarcillisePex/Other-Scripts/main/Live%20Topia%20GUI'))()
 end)
 
-Section:NewButton("Murder Mystery 2", "ESP (no gun)", function()
+
+Section:NewButton("1️⃣ Murder Mystery 2", "By:  GhostHub", function()
+    loadstring(game:HttpGet("https://scriptblox.com/raw/Murder-Mystery-2-GhostHub-MM-13413"))()
+end)
+
+Section:NewButton("2️⃣⭐ Murder Mystery 2", "By:  X HUB", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Au0yX/Community/main/XhubMM2"))()
+end)
+
+Section:NewButton("3️⃣ Murder Mystery 2", "ESP (no gun)", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Ihaveash0rtnamefordiscord/Releases/main/MurderMystery2HighlightESP"))(' Watermelon ?')
 end)
+
 
 Section:NewButton("Nanny", "By:  Zephyr", function()
     loadstring(game:HttpGet"https://raw.githubusercontent.com/Unknownlodfc/Zephyr/refs/heads/main/Zephyr%20%7C%20Nanny")()
