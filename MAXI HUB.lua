@@ -1,6 +1,6 @@
  local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
-local Window = Library.CreateLib("MAXI HUB v1.9.0", theme)
+local Window = Library.CreateLib("🌿MAXI HUB v1.9.0", theme)
 
 
 
@@ -213,7 +213,8 @@ Section:NewButton("2️⃣ Chat Draw", "By:  ???", function()
 end)
 
 
-Section:NewButton("none", "real none", function()
+Section:NewButton("Fly", "FLY GUI V3", function()
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
 end)
 
 
