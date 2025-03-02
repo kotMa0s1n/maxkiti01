@@ -196,13 +196,19 @@ Section:NewButton("Aim (NOT AIM BOT)", "All games", function()
     loadstring(game:HttpGet"https://raw.githubusercontent.com/HtB1526/ArceusX_Scripts/refs/heads/main/Scripts/easy_crosshair.lua")()
 end)
 
-Section:NewButton("Aim Bot (🔑)", "https://discord.gg/hKN3QDYCV8", function()
+
+Section:NewButton("1️⃣ Aim Bot (🔑)", "https://discord.gg/hKN3QDYCV8", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/RobloxMasterAyla/AzureModdedUniversal/refs/heads/main/AzureModded.lua"))()
 end)
 
-Section:NewButton("Aim Bot", "Auto Clicker, ESP & More", function()
+Section:NewButton("2️⃣ Aim Bot", "Auto Clicker, ESP & More", function()
     loadstring(game:HttpGet("https://pastebin.com/raw/b8QDUqJ8"))()
 end)
+
+Section:NewButton("3️⃣⭐ Aim Bot", "Active <F>", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/kotMa0s1n/maxkiti01/refs/heads/main/AIM-BOT.lua"))()
+end)
+
 
 Section:NewButton("Anti-AFK", "No kick afk", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/kotMa0s1n/maxkiti01/refs/heads/main/anti-afk.lua"))()
