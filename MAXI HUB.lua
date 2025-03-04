@@ -233,6 +233,10 @@ Section:NewButton("Fly", "FLY GUI V3", function()
      loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
 end)
 
+Section:NewButton("GhostHub", "Best universal script", function()
+    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Ghost-hub-universal-27291"))()
+end)
+
 
 Section:NewButton("1️⃣ Invisible (ONLY PC) (It doesn't work well)", "Press X to become invisible", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/kotMa0s1n/maxkiti01/refs/heads/main/Inviz.lua'))()
