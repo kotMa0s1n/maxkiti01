@@ -101,6 +101,10 @@ Section:NewButton("⭐ Fling Things and People (🔑)", "By: Bliz_T", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/BlizTBr/scripts/main/FTAP.lua"))()
 end)
 
+Section:NewButton("Forsaken", "By: Suslik", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/KrutoySuslik/SUSLIK-HUB-V2/refs/heads/main/Forsaken",true))()
+end)
+
 Section:NewButton("Gun Grounds FFA", "By:  agreed69", function()
     loadstring(game:HttpGet"https://raw.githubusercontent.com/agreed69-scripts/open-src-scripts/refs/heads/main/Gun%20Grounds%20FFA.lua")()
 end)
