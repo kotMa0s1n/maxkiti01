@@ -1,4 +1,4 @@
- local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
 local Window = Library.CreateLib("🌿MAXI HUB v1.9.1", theme)
 
@@ -247,6 +247,11 @@ Section:NewButton("2️⃣ Invisible Button (NO PRESS X, PLS)", "GUI button", fu
 end)
 
 
+Section:NewButton("⭐ AUTO PLAY PIANINO", "GUI button", function()
+    pcall(function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/TALENTLESS/main/TALENTLESS", true))()
+    end)
+end)
 
 Section:NewButton("Visual shit", "1\4 rivals :3", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Actyrn/Scripts/main/AzureModded"))()
