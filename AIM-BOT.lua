@@ -93,3 +93,8 @@ UserInputService.InputBegan:Connect(function(input)
         end
     end
 end)
+
+local Sound = Instance.new("Sound",game:GetService("SoundService"))
+Sound.SoundId = "rbxassetid://232127604"
+Sound:Play()
+game:GetService("StarterGui"):SetCore("SendNotification",{["Title"] = "AIM-BOT Loaded",["Text"] = "Press F to activate aim bot",["Duration"] = 20,["Button1"] = "Okay."})
