@@ -1,3 +1,4 @@
+game:GetService("StarterGui"):SetCore("SendNotification",{["Title"] = "AUTO-FARM SLAP",["Text"] = "Thx for using this script ❤️ (funpay.com/users/6412543)",["Duration"] = 60})
 local player = game.Players.LocalPlayer
 local virtualuser = game:GetService("VirtualUser")
 local exit = false
@@ -99,3 +100,5 @@ while wait() do
 		break
 	end
 end
+
+game:GetService("StarterGui"):SetCore("SendNotification",{["Title"] = "AUTO-FARM SLAP",["Text"] = "Thx for using this script ❤️ (funpay.com/users/6412543)",["Duration"] = 60,["Button1"] = "Okay."})
