@@ -6,7 +6,7 @@ local player = game.Players.LocalPlayer
 local virtualuser = game:GetService("VirtualUser")
 local exit = false
 function mousedown()
-    virtualuser:ClickButton1(Vector2.new(0, 0))
+    virtualuser:ClickButton1(Vector2.new(200, 200))
 end
 function raycast(position, direction, params)
     local ray = workspace:Raycast(position, direction, params)
