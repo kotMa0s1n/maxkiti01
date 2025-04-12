@@ -179,7 +179,7 @@ task.spawn(function()
     end
 
     -- Пауза перед исчезновением
-    task.wait(3)
+    task.wait(7)
 
     -- Плавное исчезновение
     for i = 1, 20 do
