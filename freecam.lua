@@ -1,4 +1,114 @@
-game:GetService("StarterGui"):SetCore("SendNotification",{["Title"] = "‼️MAXI HUB‼️",["Text"] = "Press 'Shift + P' for activate",["Duration"] = 999,["Button1"] = "Okay."})
+-- Уведомление и звук
+local Sound = Instance.new("Sound", game:GetService("SoundService"))
+Sound.SoundId = "rbxassetid://232127604"
+Sound:Play()
+
+
+local player = game.Players.LocalPlayer
+local gui = Instance.new("ScreenGui")
+gui.Name = "AimbotStartupMessage"
+gui.ResetOnSpawn = false
+gui.Parent = player:WaitForChild("PlayerGui")
+
+-- Контейнер Frame (со скруглением)
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 320, 0, 70)
+frame.Position = UDim2.new(0, 10, 1, -80)
+frame.AnchorPoint = Vector2.new(0, 1)
+frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+frame.BackgroundTransparency = 1
+frame.BorderSizePixel = 0
+frame.Parent = gui
+
+-- Скруглённые углы фрейма
+local frameCorner = Instance.new("UICorner")
+frameCorner.CornerRadius = UDim.new(0, 12)
+frameCorner.Parent = frame
+
+-- Пропорции
+local aspectRatio = Instance.new("UIAspectRatioConstraint")
+aspectRatio.AspectRatio = 4 / 1
+aspectRatio.Parent = frame
+
+-- Заголовок
+local title = Instance.new("TextLabel")
+title.Size = UDim2.new(1, -40, 0, 30)
+title.Position = UDim2.new(0, 10, 0, 5)
+title.BackgroundTransparency = 1
+title.Text = "✅ FreeCam Enabled"
+title.TextColor3 = Color3.fromRGB(0, 255, 0)
+title.TextTransparency = 1
+title.Font = Enum.Font.GothamBold
+title.TextSize = 20
+title.TextXAlignment = Enum.TextXAlignment.Left
+title.TextStrokeTransparency = 1
+title.Parent = frame
+
+-- Подзаголовок
+local subtitle = Instance.new("TextLabel")
+subtitle.Size = UDim2.new(1, -20, 0, 30)
+subtitle.Position = UDim2.new(0, 10, 0, 35)
+subtitle.BackgroundTransparency = 1
+subtitle.Text = "Press 'Shift+P' for activate"
+subtitle.TextColor3 = Color3.fromRGB(200, 255, 200)
+subtitle.TextTransparency = 1
+subtitle.Font = Enum.Font.Gotham
+subtitle.TextSize = 16
+subtitle.TextXAlignment = Enum.TextXAlignment.Left
+subtitle.TextStrokeTransparency = 1
+subtitle.Parent = frame
+
+-- Кнопка-иконка (красный крестик)
+local closeButton = Instance.new("ImageButton")
+closeButton.Size = UDim2.new(0, 24, 0, 24)
+closeButton.Position = UDim2.new(1, -28, 0, 4)
+closeButton.BackgroundTransparency = 1
+closeButton.Image = "rbxassetid://3926305904"
+closeButton.ImageRectOffset = Vector2.new(284, 4)
+closeButton.ImageRectSize = Vector2.new(24, 24)
+closeButton.ImageColor3 = Color3.fromRGB(255, 70, 70)
+closeButton.ImageTransparency = 1 -- для анимации
+closeButton.Parent = frame
+
+-- Скругление кнопки
+local buttonCorner = Instance.new("UICorner")
+buttonCorner.CornerRadius = UDim.new(1, 0)
+buttonCorner.Parent = closeButton
+
+-- Анимация появления
+task.spawn(function()
+    for i = 1, 20 do
+        local alpha = i / 20
+        frame.BackgroundTransparency = 1 - (alpha * 0.7)
+        title.TextTransparency = 1 - alpha
+        title.TextStrokeTransparency = 1 - alpha
+        subtitle.TextTransparency = 1 - alpha
+        subtitle.TextStrokeTransparency = 1 - alpha
+        closeButton.ImageTransparency = 1 - alpha
+        task.wait(0.02)
+    end
+end)
+
+-- Закрытие при нажатии
+closeButton.MouseButton1Click:Connect(function()
+    task.spawn(function()
+        for i = 1, 20 do
+            local alpha = i / 20
+            frame.BackgroundTransparency = 0.3 + (alpha * 0.7)
+            title.TextTransparency += 0.05
+            title.TextStrokeTransparency += 0.05
+            subtitle.TextTransparency += 0.05
+            subtitle.TextStrokeTransparency += 0.05
+            closeButton.ImageTransparency += 0.05
+            task.wait(0.02)
+        end
+        gui:Destroy()
+    end)
+end)
+
+
+
+
 function sandbox(var,func)
 local env = getfenv(func)
 local newenv = setmetatable({},{
