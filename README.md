@@ -1,6 +1,6 @@
 im maxkiti01 (or kot_ma0s1n, or cat)
 --------------------------------------------
-<I program in 	![Lua](https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white) Roblox>
+< I program in 	![Lua](https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white) Roblox >
 -------------------------------------------
 
 
