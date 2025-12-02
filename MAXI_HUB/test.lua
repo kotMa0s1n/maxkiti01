@@ -23,7 +23,7 @@ function Library:CreateWindow(title)
     -- Заголовок
     local TitleBar = Instance.new("Frame")
     TitleBar.Name = "TitleBar"
-    TitleBar.Size = UDim2.new(1, 0, 0, 40)
+    TitleBar.Size = UDim2.new(1, 0, 0, 50)
     TitleBar.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
     TitleBar.BorderSizePixel = 0
     TitleBar.Parent = MainFrame
@@ -32,29 +32,37 @@ function Library:CreateWindow(title)
     TitleCorner.CornerRadius = UDim.new(0, 10)
     TitleCorner.Parent = TitleBar
     
+    -- Нижняя часть заголовка чтобы скрыть скругление
+    local TitleBarBottom = Instance.new("Frame")
+    TitleBarBottom.Size = UDim2.new(1, 0, 0, 10)
+    TitleBarBottom.Position = UDim2.new(0, 0, 1, -10)
+    TitleBarBottom.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
+    TitleBarBottom.BorderSizePixel = 0
+    TitleBarBottom.Parent = TitleBar
+    
     local TitleLabel = Instance.new("TextLabel")
     TitleLabel.Name = "TitleLabel"
     TitleLabel.Size = UDim2.new(1, -120, 1, 0)
-    TitleLabel.Position = UDim2.new(0, 10, 0, 0)
+    TitleLabel.Position = UDim2.new(0, 15, 0, 0)
     TitleLabel.BackgroundTransparency = 1
     TitleLabel.Text = title
     TitleLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
     TitleLabel.Font = Enum.Font.GothamBold
-    TitleLabel.TextSize = 16
+    TitleLabel.TextSize = 18
     TitleLabel.TextXAlignment = Enum.TextXAlignment.Left
     TitleLabel.Parent = TitleBar
     
     -- Кнопки управления окном
     local ButtonsFrame = Instance.new("Frame")
-    ButtonsFrame.Size = UDim2.new(0, 80, 0, 25)
-    ButtonsFrame.Position = UDim2.new(1, -90, 0, 8)
+    ButtonsFrame.Size = UDim2.new(0, 90, 0, 28)
+    ButtonsFrame.Position = UDim2.new(1, -105, 0, 11)
     ButtonsFrame.BackgroundTransparency = 1
     ButtonsFrame.Parent = TitleBar
     
     local function CreateWindowButton(color, position, name)
         local btn = Instance.new("TextButton")
         btn.Name = name
-        btn.Size = UDim2.new(0, 20, 0, 20)
+        btn.Size = UDim2.new(0, 24, 0, 24)
         btn.Position = position
         btn.BackgroundColor3 = color
         btn.BorderSizePixel = 0
@@ -69,14 +77,14 @@ function Library:CreateWindow(title)
     end
     
     local GreenBtn = CreateWindowButton(Color3.fromRGB(52, 199, 89), UDim2.new(0, 0, 0, 0), "GreenBtn")
-    local YellowBtn = CreateWindowButton(Color3.fromRGB(255, 204, 0), UDim2.new(0, 30, 0, 0), "YellowBtn")
-    local RedBtn = CreateWindowButton(Color3.fromRGB(255, 59, 48), UDim2.new(0, 60, 0, 0), "RedBtn")
+    local YellowBtn = CreateWindowButton(Color3.fromRGB(255, 204, 0), UDim2.new(0, 33, 0, 0), "YellowBtn")
+    local RedBtn = CreateWindowButton(Color3.fromRGB(255, 59, 48), UDim2.new(0, 66, 0, 0), "RedBtn")
     
     -- Поиск по вкладкам
     local SearchFrame = Instance.new("Frame")
     SearchFrame.Name = "SearchFrame"
-    SearchFrame.Size = UDim2.new(0, 200, 0, 35)
-    SearchFrame.Position = UDim2.new(0, 10, 0, 50)
+    SearchFrame.Size = UDim2.new(0, 210, 0, 40)
+    SearchFrame.Position = UDim2.new(0, 8, 0, 58)
     SearchFrame.BackgroundColor3 = Color3.fromRGB(245, 245, 245)
     SearchFrame.BorderSizePixel = 0
     SearchFrame.Parent = MainFrame
@@ -87,8 +95,8 @@ function Library:CreateWindow(title)
     
     local SearchBox = Instance.new("TextBox")
     SearchBox.Name = "SearchBox"
-    SearchBox.Size = UDim2.new(1, -10, 1, 0)
-    SearchBox.Position = UDim2.new(0, 5, 0, 0)
+    SearchBox.Size = UDim2.new(1, -20, 1, 0)
+    SearchBox.Position = UDim2.new(0, 10, 0, 0)
     SearchBox.BackgroundTransparency = 1
     SearchBox.PlaceholderText = "Поиск вкладок..."
     SearchBox.Text = ""
@@ -102,11 +110,11 @@ function Library:CreateWindow(title)
     -- Список вкладок (слева)
     local TabsListFrame = Instance.new("ScrollingFrame")
     TabsListFrame.Name = "TabsListFrame"
-    TabsListFrame.Size = UDim2.new(0, 200, 0, 360)
-    TabsListFrame.Position = UDim2.new(0, 10, 0, 95)
+    TabsListFrame.Size = UDim2.new(0, 210, 0, 340)
+    TabsListFrame.Position = UDim2.new(0, 8, 0, 106)
     TabsListFrame.BackgroundColor3 = Color3.fromRGB(245, 245, 245)
     TabsListFrame.BorderSizePixel = 0
-    TabsListFrame.ScrollBarThickness = 4
+    TabsListFrame.ScrollBarThickness = 5
     TabsListFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
     TabsListFrame.Parent = MainFrame
     
@@ -115,14 +123,21 @@ function Library:CreateWindow(title)
     TabsCorner.Parent = TabsListFrame
     
     local TabsLayout = Instance.new("UIListLayout")
-    TabsLayout.Padding = UDim.new(0, 5)
+    TabsLayout.Padding = UDim.new(0, 6)
     TabsLayout.Parent = TabsListFrame
+    
+    local TabsPadding = Instance.new("UIPadding")
+    TabsPadding.PaddingTop = UDim.new(0, 8)
+    TabsPadding.PaddingBottom = UDim.new(0, 8)
+    TabsPadding.PaddingLeft = UDim.new(0, 8)
+    TabsPadding.PaddingRight = UDim.new(0, 8)
+    TabsPadding.Parent = TabsListFrame
     
     -- Кнопка добавления вкладки
     local AddTabBtn = Instance.new("TextButton")
     AddTabBtn.Name = "AddTabBtn"
-    AddTabBtn.Size = UDim2.new(0, 200, 0, 35)
-    AddTabBtn.Position = UDim2.new(0, 10, 1, -45)
+    AddTabBtn.Size = UDim2.new(0, 210, 0, 40)
+    AddTabBtn.Position = UDim2.new(0, 8, 0, 452)
     AddTabBtn.BackgroundColor3 = Color3.fromRGB(0, 122, 255)
     AddTabBtn.BorderSizePixel = 0
     AddTabBtn.Text = "+ Добавить вкладку"
@@ -138,8 +153,8 @@ function Library:CreateWindow(title)
     -- Контент вкладки (справа)
     local ContentFrame = Instance.new("ScrollingFrame")
     ContentFrame.Name = "ContentFrame"
-    ContentFrame.Size = UDim2.new(0, 460, 0, 410)
-    ContentFrame.Position = UDim2.new(0, 220, 0, 50)
+    ContentFrame.Size = UDim2.new(0, 466, 0, 434)
+    ContentFrame.Position = UDim2.new(0, 226, 0, 58)
     ContentFrame.BackgroundColor3 = Color3.fromRGB(250, 250, 250)
     ContentFrame.BorderSizePixel = 0
     ContentFrame.ScrollBarThickness = 6
@@ -151,9 +166,12 @@ function Library:CreateWindow(title)
     ContentCorner.CornerRadius = UDim.new(0, 8)
     ContentCorner.Parent = ContentFrame
     
-    local ContentLayout = Instance.new("UIListLayout")
-    ContentLayout.Padding = UDim.new(0, 10)
-    ContentLayout.Parent = ContentFrame
+    local ContentPadding = Instance.new("UIPadding")
+    ContentPadding.PaddingTop = UDim.new(0, 15)
+    ContentPadding.PaddingBottom = UDim.new(0, 15)
+    ContentPadding.PaddingLeft = UDim.new(0, 15)
+    ContentPadding.PaddingRight = UDim.new(0, 15)
+    ContentPadding.Parent = ContentFrame
     
     -- Переменные
     local tabs = {}
@@ -162,11 +180,7 @@ function Library:CreateWindow(title)
     
     -- Обновление размера canvas
     TabsLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
-        TabsListFrame.CanvasSize = UDim2.new(0, 0, 0, TabsLayout.AbsoluteContentSize.Y + 10)
-    end)
-    
-    ContentLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
-        ContentFrame.CanvasSize = UDim2.new(0, 0, 0, ContentLayout.AbsoluteContentSize.Y + 20)
+        TabsListFrame.CanvasSize = UDim2.new(0, 0, 0, TabsLayout.AbsoluteContentSize.Y + 16)
     end)
     
     -- Функция смены темы
@@ -176,6 +190,7 @@ function Library:CreateWindow(title)
         if isDarkMode then
             MainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
             TitleBar.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+            TitleBarBottom.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
             TitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
             SearchFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
             SearchBox.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -186,6 +201,7 @@ function Library:CreateWindow(title)
         else
             MainFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             TitleBar.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
+            TitleBarBottom.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
             TitleLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
             SearchFrame.BackgroundColor3 = Color3.fromRGB(245, 245, 245)
             SearchBox.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -204,6 +220,7 @@ function Library:CreateWindow(title)
                     tab.Button.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
                     tab.Button.TextColor3 = Color3.fromRGB(200, 200, 200)
                 end
+                tab.DeleteBtn.BackgroundColor3 = Color3.fromRGB(200, 40, 40)
             else
                 if tab == currentTab then
                     tab.Button.BackgroundColor3 = Color3.fromRGB(0, 122, 255)
@@ -211,6 +228,7 @@ function Library:CreateWindow(title)
                     tab.Button.BackgroundColor3 = Color3.fromRGB(230, 230, 230)
                     tab.Button.TextColor3 = Color3.fromRGB(50, 50, 50)
                 end
+                tab.DeleteBtn.BackgroundColor3 = Color3.fromRGB(255, 59, 48)
             end
         end
     end
@@ -301,33 +319,43 @@ function Library:CreateWindow(title)
         -- Кнопка вкладки
         local TabButton = Instance.new("TextButton")
         TabButton.Name = tabName
-        TabButton.Size = UDim2.new(1, -10, 0, 35)
+        TabButton.Size = UDim2.new(1, 0, 0, 45)
         TabButton.BackgroundColor3 = isDarkMode and Color3.fromRGB(50, 50, 50) or Color3.fromRGB(230, 230, 230)
         TabButton.BorderSizePixel = 0
-        TabButton.Text = tabName
-        TabButton.TextColor3 = isDarkMode and Color3.fromRGB(200, 200, 200) or Color3.fromRGB(50, 50, 50)
-        TabButton.Font = Enum.Font.GothamSemibold
-        TabButton.TextSize = 14
+        TabButton.Text = ""
         TabButton.Parent = TabsListFrame
         
         local TabBtnCorner = Instance.new("UICorner")
-        TabBtnCorner.CornerRadius = UDim.new(0, 6)
+        TabBtnCorner.CornerRadius = UDim.new(0, 8)
         TabBtnCorner.Parent = TabButton
+        
+        -- Текст вкладки
+        local TabLabel = Instance.new("TextLabel")
+        TabLabel.Size = UDim2.new(1, -40, 1, 0)
+        TabLabel.Position = UDim2.new(0, 12, 0, 0)
+        TabLabel.BackgroundTransparency = 1
+        TabLabel.Text = tabName
+        TabLabel.TextColor3 = isDarkMode and Color3.fromRGB(200, 200, 200) or Color3.fromRGB(50, 50, 50)
+        TabLabel.Font = Enum.Font.GothamSemibold
+        TabLabel.TextSize = 15
+        TabLabel.TextXAlignment = Enum.TextXAlignment.Left
+        TabLabel.TextTruncate = Enum.TextTruncate.AtEnd
+        TabLabel.Parent = TabButton
         
         -- Кнопка удаления вкладки
         local DeleteBtn = Instance.new("TextButton")
-        DeleteBtn.Size = UDim2.new(0, 25, 0, 25)
-        DeleteBtn.Position = UDim2.new(1, -30, 0, 5)
-        DeleteBtn.BackgroundColor3 = Color3.fromRGB(255, 59, 48)
+        DeleteBtn.Size = UDim2.new(0, 28, 0, 28)
+        DeleteBtn.Position = UDim2.new(1, -36, 0.5, -14)
+        DeleteBtn.BackgroundColor3 = isDarkMode and Color3.fromRGB(200, 40, 40) or Color3.fromRGB(255, 59, 48)
         DeleteBtn.BorderSizePixel = 0
         DeleteBtn.Text = "×"
         DeleteBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
         DeleteBtn.Font = Enum.Font.GothamBold
-        DeleteBtn.TextSize = 18
+        DeleteBtn.TextSize = 20
         DeleteBtn.Parent = TabButton
         
         local DelBtnCorner = Instance.new("UICorner")
-        DelBtnCorner.CornerRadius = UDim.new(0, 4)
+        DelBtnCorner.CornerRadius = UDim.new(0, 6)
         DelBtnCorner.Parent = DeleteBtn
         
         -- Контент вкладки
@@ -342,15 +370,24 @@ function Library:CreateWindow(title)
         TabContent.Parent = ContentFrame.Parent
         
         local TabLayout = Instance.new("UIListLayout")
-        TabLayout.Padding = UDim.new(0, 10)
+        TabLayout.Padding = UDim.new(0, 12)
         TabLayout.Parent = TabContent
         
+        local TabContentPadding = Instance.new("UIPadding")
+        TabContentPadding.PaddingTop = UDim.new(0, 15)
+        TabContentPadding.PaddingBottom = UDim.new(0, 15)
+        TabContentPadding.PaddingLeft = UDim.new(0, 15)
+        TabContentPadding.PaddingRight = UDim.new(0, 15)
+        TabContentPadding.Parent = TabContent
+        
         TabLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
-            TabContent.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y + 20)
+            TabContent.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y + 30)
         end)
         
         Tab.Button = TabButton
         Tab.Content = TabContent
+        Tab.Label = TabLabel
+        Tab.DeleteBtn = DeleteBtn
         
         TabButton.MouseButton1Click:Connect(function()
             SwitchTab(Tab)
@@ -362,6 +399,8 @@ function Library:CreateWindow(title)
             table.remove(tabs, table.find(tabs, Tab))
             if currentTab == Tab and #tabs > 0 then
                 SwitchTab(tabs[1])
+            elseif #tabs == 0 then
+                ContentFrame.Visible = false
             end
         end)
         
@@ -374,13 +413,13 @@ function Library:CreateWindow(title)
         -- Tab API
         function Tab:AddButton(text, callback)
             local Button = Instance.new("TextButton")
-            Button.Size = UDim2.new(1, -20, 0, 40)
+            Button.Size = UDim2.new(1, 0, 0, 45)
             Button.BackgroundColor3 = Color3.fromRGB(0, 122, 255)
             Button.BorderSizePixel = 0
             Button.Text = text
             Button.TextColor3 = Color3.fromRGB(255, 255, 255)
             Button.Font = Enum.Font.GothamSemibold
-            Button.TextSize = 14
+            Button.TextSize = 15
             Button.Parent = TabContent
             
             local BtnCorner = Instance.new("UICorner")
@@ -392,7 +431,7 @@ function Library:CreateWindow(title)
         
         function Tab:AddToggle(text, default, callback)
             local ToggleFrame = Instance.new("Frame")
-            ToggleFrame.Size = UDim2.new(1, -20, 0, 40)
+            ToggleFrame.Size = UDim2.new(1, 0, 0, 50)
             ToggleFrame.BackgroundColor3 = isDarkMode and Color3.fromRGB(50, 50, 50) or Color3.fromRGB(240, 240, 240)
             ToggleFrame.BorderSizePixel = 0
             ToggleFrame.Parent = TabContent
@@ -402,19 +441,20 @@ function Library:CreateWindow(title)
             ToggleCorner.Parent = ToggleFrame
             
             local ToggleLabel = Instance.new("TextLabel")
-            ToggleLabel.Size = UDim2.new(1, -60, 1, 0)
-            ToggleLabel.Position = UDim2.new(0, 10, 0, 0)
+            ToggleLabel.Size = UDim2.new(1, -70, 1, 0)
+            ToggleLabel.Position = UDim2.new(0, 15, 0, 0)
             ToggleLabel.BackgroundTransparency = 1
             ToggleLabel.Text = text
             ToggleLabel.TextColor3 = isDarkMode and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(0, 0, 0)
             ToggleLabel.Font = Enum.Font.Gotham
-            ToggleLabel.TextSize = 14
+            ToggleLabel.TextSize = 15
             ToggleLabel.TextXAlignment = Enum.TextXAlignment.Left
+            ToggleLabel.TextWrapped = true
             ToggleLabel.Parent = ToggleFrame
             
             local ToggleButton = Instance.new("TextButton")
-            ToggleButton.Size = UDim2.new(0, 45, 0, 25)
-            ToggleButton.Position = UDim2.new(1, -55, 0.5, -12)
+            ToggleButton.Size = UDim2.new(0, 50, 0, 28)
+            ToggleButton.Position = UDim2.new(1, -60, 0.5, -14)
             ToggleButton.BackgroundColor3 = default and Color3.fromRGB(52, 199, 89) or Color3.fromRGB(200, 200, 200)
             ToggleButton.BorderSizePixel = 0
             ToggleButton.Text = ""
@@ -425,8 +465,8 @@ function Library:CreateWindow(title)
             ToggleBtnCorner.Parent = ToggleButton
             
             local ToggleCircle = Instance.new("Frame")
-            ToggleCircle.Size = UDim2.new(0, 19, 0, 19)
-            ToggleCircle.Position = default and UDim2.new(1, -22, 0.5, -9) or UDim2.new(0, 3, 0.5, -9)
+            ToggleCircle.Size = UDim2.new(0, 22, 0, 22)
+            ToggleCircle.Position = default and UDim2.new(1, -25, 0.5, -11) or UDim2.new(0, 3, 0.5, -11)
             ToggleCircle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             ToggleCircle.BorderSizePixel = 0
             ToggleCircle.Parent = ToggleButton
@@ -440,27 +480,31 @@ function Library:CreateWindow(title)
             ToggleButton.MouseButton1Click:Connect(function()
                 toggled = not toggled
                 ToggleButton.BackgroundColor3 = toggled and Color3.fromRGB(52, 199, 89) or Color3.fromRGB(200, 200, 200)
-                ToggleCircle:TweenPosition(toggled and UDim2.new(1, -22, 0.5, -9) or UDim2.new(0, 3, 0.5, -9), "Out", "Quad", 0.2, true)
+                ToggleCircle:TweenPosition(toggled and UDim2.new(1, -25, 0.5, -11) or UDim2.new(0, 3, 0.5, -11), "Out", "Quad", 0.2, true)
                 callback(toggled)
             end)
         end
         
         function Tab:AddLabel(text)
             local Label = Instance.new("TextLabel")
-            Label.Size = UDim2.new(1, -20, 0, 30)
+            Label.Size = UDim2.new(1, 0, 0, 35)
             Label.BackgroundTransparency = 1
             Label.Text = text
             Label.TextColor3 = isDarkMode and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(0, 0, 0)
             Label.Font = Enum.Font.Gotham
-            Label.TextSize = 14
+            Label.TextSize = 15
             Label.TextXAlignment = Enum.TextXAlignment.Left
             Label.TextWrapped = true
             Label.Parent = TabContent
+            
+            -- Автоматическая регулировка высоты
+            Label.TextBounds.Y = Label.TextBounds.Y
+            Label.Size = UDim2.new(1, 0, 0, math.max(35, Label.TextBounds.Y + 10))
         end
         
         function Tab:AddTextbox(placeholder, callback)
             local TextboxFrame = Instance.new("Frame")
-            TextboxFrame.Size = UDim2.new(1, -20, 0, 40)
+            TextboxFrame.Size = UDim2.new(1, 0, 0, 45)
             TextboxFrame.BackgroundColor3 = isDarkMode and Color3.fromRGB(50, 50, 50) or Color3.fromRGB(240, 240, 240)
             TextboxFrame.BorderSizePixel = 0
             TextboxFrame.Parent = TabContent
@@ -470,15 +514,15 @@ function Library:CreateWindow(title)
             TextboxCorner.Parent = TextboxFrame
             
             local Textbox = Instance.new("TextBox")
-            Textbox.Size = UDim2.new(1, -20, 1, 0)
-            Textbox.Position = UDim2.new(0, 10, 0, 0)
+            Textbox.Size = UDim2.new(1, -24, 1, 0)
+            Textbox.Position = UDim2.new(0, 12, 0, 0)
             Textbox.BackgroundTransparency = 1
             Textbox.PlaceholderText = placeholder
             Textbox.Text = ""
             Textbox.TextColor3 = isDarkMode and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(0, 0, 0)
             Textbox.PlaceholderColor3 = Color3.fromRGB(150, 150, 150)
             Textbox.Font = Enum.Font.Gotham
-            Textbox.TextSize = 14
+            Textbox.TextSize = 15
             Textbox.TextXAlignment = Enum.TextXAlignment.Left
             Textbox.Parent = TextboxFrame
             
