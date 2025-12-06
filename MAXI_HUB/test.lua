@@ -527,9 +527,7 @@ function Library:CreateWindow(title)
             Label.TextWrapped = true
             Label.Parent = TabContent
             
-            -- Автоматическая регулировка высоты
-            Label.TextBounds.Y = Label.TextBounds.Y
-            Label.Size = UDim2.new(1, 0, 0, math.max(35, Label.TextBounds.Y + 10))
+            return Label
         end
         
         function Tab:AddTextbox(placeholder, callback)
