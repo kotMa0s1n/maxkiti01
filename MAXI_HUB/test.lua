@@ -80,6 +80,33 @@ function Library:CreateWindow(title)
     local YellowBtn = CreateWindowButton(Color3.fromRGB(255, 204, 0), UDim2.new(0, 33, 0, 0), "YellowBtn")
     local RedBtn = CreateWindowButton(Color3.fromRGB(255, 59, 48), UDim2.new(0, 66, 0, 0), "RedBtn")
     
+    -- Уведомление о хоткее
+    local NotificationFrame = Instance.new("Frame")
+    NotificationFrame.Name = "NotificationFrame"
+    NotificationFrame.Size = UDim2.new(0, 280, 0, 60)
+    NotificationFrame.Position = UDim2.new(0, 20, 1, -80)
+    NotificationFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    NotificationFrame.BorderSizePixel = 0
+    NotificationFrame.Visible = false
+    NotificationFrame.Parent = ScreenGui
+    
+    local NotifCorner = Instance.new("UICorner")
+    NotifCorner.CornerRadius = UDim.new(0, 10)
+    NotifCorner.Parent = NotificationFrame
+    
+    local NotifText = Instance.new("TextLabel")
+    NotifText.Size = UDim2.new(1, -20, 1, -20)
+    NotifText.Position = UDim2.new(0, 10, 0, 10)
+    NotifText.BackgroundTransparency = 1
+    NotifText.Text = "Нажмите RightShift\nчтобы открыть/закрыть хаб"
+    NotifText.TextColor3 = Color3.fromRGB(255, 255, 255)
+    NotifText.Font = Enum.Font.GothamSemibold
+    NotifText.TextSize = 14
+    NotifText.TextXAlignment = Enum.TextXAlignment.Left
+    NotifText.TextYAlignment = Enum.TextYAlignment.Top
+    NotifText.TextWrapped = true
+    NotifText.Parent = NotificationFrame
+    
     -- Поиск по вкладкам
     local SearchFrame = Instance.new("Frame")
     SearchFrame.Name = "SearchFrame"
@@ -110,8 +137,8 @@ function Library:CreateWindow(title)
     -- Список вкладок (слева)
     local TabsListFrame = Instance.new("ScrollingFrame")
     TabsListFrame.Name = "TabsListFrame"
-    TabsListFrame.Size = UDim2.new(0, 210, 0, 340)
-    TabsListFrame.Position = UDim2.new(0, 8, 0, 106)
+    TabsListFrame.Size = UDim2.new(0, 210, 0, 434)
+    TabsListFrame.Position = UDim2.new(0, 8, 0, 58)
     TabsListFrame.BackgroundColor3 = Color3.fromRGB(245, 245, 245)
     TabsListFrame.BorderSizePixel = 0
     TabsListFrame.ScrollBarThickness = 5
@@ -132,23 +159,6 @@ function Library:CreateWindow(title)
     TabsPadding.PaddingLeft = UDim.new(0, 8)
     TabsPadding.PaddingRight = UDim.new(0, 8)
     TabsPadding.Parent = TabsListFrame
-    
-    -- Кнопка добавления вкладки
-    local AddTabBtn = Instance.new("TextButton")
-    AddTabBtn.Name = "AddTabBtn"
-    AddTabBtn.Size = UDim2.new(0, 210, 0, 40)
-    AddTabBtn.Position = UDim2.new(0, 8, 0, 452)
-    AddTabBtn.BackgroundColor3 = Color3.fromRGB(0, 122, 255)
-    AddTabBtn.BorderSizePixel = 0
-    AddTabBtn.Text = "+ Добавить вкладку"
-    AddTabBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-    AddTabBtn.Font = Enum.Font.GothamBold
-    AddTabBtn.TextSize = 14
-    AddTabBtn.Parent = MainFrame
-    
-    local AddBtnCorner = Instance.new("UICorner")
-    AddBtnCorner.CornerRadius = UDim.new(0, 8)
-    AddBtnCorner.Parent = AddTabBtn
     
     -- Контент вкладки (справа)
     local ContentFrame = Instance.new("ScrollingFrame")
@@ -177,11 +187,25 @@ function Library:CreateWindow(title)
     local tabs = {}
     local currentTab = nil
     local isDarkMode = false
+    local isHubVisible = true
     
     -- Обновление размера canvas
     TabsLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
         TabsListFrame.CanvasSize = UDim2.new(0, 0, 0, TabsLayout.AbsoluteContentSize.Y + 16)
     end)
+    
+    -- Функция показа уведомления
+    local function ShowNotification()
+        NotificationFrame.Visible = true
+        NotificationFrame.Position = UDim2.new(0, 20, 1, 0)
+        NotificationFrame:TweenPosition(UDim2.new(0, 20, 1, -80), "Out", "Quad", 0.3, true)
+        
+        task.wait(3)
+        
+        NotificationFrame:TweenPosition(UDim2.new(0, 20, 1, 0), "In", "Quad", 0.3, true, function()
+            NotificationFrame.Visible = false
+        end)
+    end
     
     -- Функция смены темы
     local function ToggleTheme()
@@ -197,7 +221,6 @@ function Library:CreateWindow(title)
             SearchBox.PlaceholderColor3 = Color3.fromRGB(150, 150, 150)
             TabsListFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
             ContentFrame.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
-            AddTabBtn.BackgroundColor3 = Color3.fromRGB(0, 100, 210)
         else
             MainFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             TitleBar.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
@@ -208,28 +231,56 @@ function Library:CreateWindow(title)
             SearchBox.PlaceholderColor3 = Color3.fromRGB(150, 150, 150)
             TabsListFrame.BackgroundColor3 = Color3.fromRGB(245, 245, 245)
             ContentFrame.BackgroundColor3 = Color3.fromRGB(250, 250, 250)
-            AddTabBtn.BackgroundColor3 = Color3.fromRGB(0, 122, 255)
         end
         
-        -- Обновление цветов вкладок
+        -- Обновление цветов вкладок и элементов
         for _, tab in pairs(tabs) do
             if isDarkMode then
                 if tab == currentTab then
                     tab.Button.BackgroundColor3 = Color3.fromRGB(0, 122, 255)
                 else
                     tab.Button.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-                    tab.Button.TextColor3 = Color3.fromRGB(200, 200, 200)
+                    tab.Label.TextColor3 = Color3.fromRGB(200, 200, 200)
                 end
-                tab.DeleteBtn.BackgroundColor3 = Color3.fromRGB(200, 40, 40)
             else
                 if tab == currentTab then
                     tab.Button.BackgroundColor3 = Color3.fromRGB(0, 122, 255)
                 else
                     tab.Button.BackgroundColor3 = Color3.fromRGB(230, 230, 230)
-                    tab.Button.TextColor3 = Color3.fromRGB(50, 50, 50)
+                    tab.Label.TextColor3 = Color3.fromRGB(50, 50, 50)
                 end
-                tab.DeleteBtn.BackgroundColor3 = Color3.fromRGB(255, 59, 48)
             end
+            
+            -- Обновление элементов внутри вкладки
+            for _, element in pairs(tab.Content:GetChildren()) do
+                if element:IsA("Frame") and element.Name:find("Toggle") then
+                    element.BackgroundColor3 = isDarkMode and Color3.fromRGB(50, 50, 50) or Color3.fromRGB(240, 240, 240)
+                    for _, child in pairs(element:GetChildren()) do
+                        if child:IsA("TextLabel") then
+                            child.TextColor3 = isDarkMode and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(0, 0, 0)
+                        end
+                    end
+                elseif element:IsA("Frame") and element.Name:find("Textbox") then
+                    element.BackgroundColor3 = isDarkMode and Color3.fromRGB(50, 50, 50) or Color3.fromRGB(240, 240, 240)
+                    for _, child in pairs(element:GetChildren()) do
+                        if child:IsA("TextBox") then
+                            child.TextColor3 = isDarkMode and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(0, 0, 0)
+                        end
+                    end
+                elseif element:IsA("TextLabel") then
+                    element.TextColor3 = isDarkMode and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(0, 0, 0)
+                end
+            end
+        end
+    end
+    
+    -- Функция переключения видимости хаба
+    local function ToggleHub()
+        isHubVisible = not isHubVisible
+        MainFrame.Visible = isHubVisible
+        
+        if not isHubVisible then
+            ShowNotification()
         end
     end
     
@@ -239,16 +290,16 @@ function Library:CreateWindow(title)
             t.Content.Visible = false
             if isDarkMode then
                 t.Button.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-                t.Button.TextColor3 = Color3.fromRGB(200, 200, 200)
+                t.Label.TextColor3 = Color3.fromRGB(200, 200, 200)
             else
                 t.Button.BackgroundColor3 = Color3.fromRGB(230, 230, 230)
-                t.Button.TextColor3 = Color3.fromRGB(50, 50, 50)
+                t.Label.TextColor3 = Color3.fromRGB(50, 50, 50)
             end
         end
         
         tab.Content.Visible = true
         tab.Button.BackgroundColor3 = Color3.fromRGB(0, 122, 255)
-        tab.Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+        tab.Label.TextColor3 = Color3.fromRGB(255, 255, 255)
         currentTab = tab
     end
     
@@ -269,11 +320,17 @@ function Library:CreateWindow(title)
         ScreenGui:Destroy()
     end)
     
-    YellowBtn.MouseButton1Click:Connect(function()
-        MainFrame.Visible = not MainFrame.Visible
-    end)
+    YellowBtn.MouseButton1Click:Connect(ToggleHub)
     
     GreenBtn.MouseButton1Click:Connect(ToggleTheme)
+    
+    -- Хоткей RightShift для открытия/закрытия хаба
+    local UserInputService = game:GetService("UserInputService")
+    UserInputService.InputBegan:Connect(function(input, gameProcessed)
+        if input.KeyCode == Enum.KeyCode.RightShift then
+            ToggleHub()
+        end
+    end)
     
     -- Перетаскивание окна
     local dragging, dragInput, dragStart, startPos
@@ -298,7 +355,7 @@ function Library:CreateWindow(title)
         end
     end)
     
-    game:GetService("UserInputService").InputChanged:Connect(function(input)
+    UserInputService.InputChanged:Connect(function(input)
         if input == dragInput and dragging then
             local delta = input.Position - dragStart
             MainFrame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
@@ -314,11 +371,11 @@ function Library:CreateWindow(title)
     
     function Window:CreateTab(tabName)
         local Tab = {}
-        Tab.Name = tabName
+        Tab.Name = tabName or "Вкладка"
         
         -- Кнопка вкладки
         local TabButton = Instance.new("TextButton")
-        TabButton.Name = tabName
+        TabButton.Name = Tab.Name
         TabButton.Size = UDim2.new(1, 0, 0, 45)
         TabButton.BackgroundColor3 = isDarkMode and Color3.fromRGB(50, 50, 50) or Color3.fromRGB(230, 230, 230)
         TabButton.BorderSizePixel = 0
@@ -331,10 +388,10 @@ function Library:CreateWindow(title)
         
         -- Текст вкладки
         local TabLabel = Instance.new("TextLabel")
-        TabLabel.Size = UDim2.new(1, -40, 1, 0)
+        TabLabel.Size = UDim2.new(1, -24, 1, 0)
         TabLabel.Position = UDim2.new(0, 12, 0, 0)
         TabLabel.BackgroundTransparency = 1
-        TabLabel.Text = tabName
+        TabLabel.Text = Tab.Name
         TabLabel.TextColor3 = isDarkMode and Color3.fromRGB(200, 200, 200) or Color3.fromRGB(50, 50, 50)
         TabLabel.Font = Enum.Font.GothamSemibold
         TabLabel.TextSize = 15
@@ -342,25 +399,9 @@ function Library:CreateWindow(title)
         TabLabel.TextTruncate = Enum.TextTruncate.AtEnd
         TabLabel.Parent = TabButton
         
-        -- Кнопка удаления вкладки
-        local DeleteBtn = Instance.new("TextButton")
-        DeleteBtn.Size = UDim2.new(0, 28, 0, 28)
-        DeleteBtn.Position = UDim2.new(1, -36, 0.5, -14)
-        DeleteBtn.BackgroundColor3 = isDarkMode and Color3.fromRGB(200, 40, 40) or Color3.fromRGB(255, 59, 48)
-        DeleteBtn.BorderSizePixel = 0
-        DeleteBtn.Text = "×"
-        DeleteBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-        DeleteBtn.Font = Enum.Font.GothamBold
-        DeleteBtn.TextSize = 20
-        DeleteBtn.Parent = TabButton
-        
-        local DelBtnCorner = Instance.new("UICorner")
-        DelBtnCorner.CornerRadius = UDim.new(0, 6)
-        DelBtnCorner.Parent = DeleteBtn
-        
         -- Контент вкладки
         local TabContent = Instance.new("ScrollingFrame")
-        TabContent.Name = tabName .. "Content"
+        TabContent.Name = Tab.Name .. "Content"
         TabContent.Size = UDim2.new(1, 0, 1, 0)
         TabContent.BackgroundTransparency = 1
         TabContent.BorderSizePixel = 0
@@ -387,21 +428,9 @@ function Library:CreateWindow(title)
         Tab.Button = TabButton
         Tab.Content = TabContent
         Tab.Label = TabLabel
-        Tab.DeleteBtn = DeleteBtn
         
         TabButton.MouseButton1Click:Connect(function()
             SwitchTab(Tab)
-        end)
-        
-        DeleteBtn.MouseButton1Click:Connect(function()
-            TabButton:Destroy()
-            TabContent:Destroy()
-            table.remove(tabs, table.find(tabs, Tab))
-            if currentTab == Tab and #tabs > 0 then
-                SwitchTab(tabs[1])
-            elseif #tabs == 0 then
-                ContentFrame.Visible = false
-            end
         end)
         
         table.insert(tabs, Tab)
@@ -431,6 +460,7 @@ function Library:CreateWindow(title)
         
         function Tab:AddToggle(text, default, callback)
             local ToggleFrame = Instance.new("Frame")
+            ToggleFrame.Name = "ToggleFrame"
             ToggleFrame.Size = UDim2.new(1, 0, 0, 50)
             ToggleFrame.BackgroundColor3 = isDarkMode and Color3.fromRGB(50, 50, 50) or Color3.fromRGB(240, 240, 240)
             ToggleFrame.BorderSizePixel = 0
@@ -504,6 +534,7 @@ function Library:CreateWindow(title)
         
         function Tab:AddTextbox(placeholder, callback)
             local TextboxFrame = Instance.new("Frame")
+            TextboxFrame.Name = "TextboxFrame"
             TextboxFrame.Size = UDim2.new(1, 0, 0, 45)
             TextboxFrame.BackgroundColor3 = isDarkMode and Color3.fromRGB(50, 50, 50) or Color3.fromRGB(240, 240, 240)
             TextboxFrame.BorderSizePixel = 0
@@ -533,10 +564,6 @@ function Library:CreateWindow(title)
         
         return Tab
     end
-    
-    AddTabBtn.MouseButton1Click:Connect(function()
-        Window:CreateTab("Новая вкладка " .. (#tabs + 1))
-    end)
     
     return Window
 end
