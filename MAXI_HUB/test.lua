@@ -180,7 +180,7 @@ function Library:CreateWindow(title)
     ContentPadding.PaddingTop = UDim.new(0, 15)
     ContentPadding.PaddingBottom = UDim.new(0, 15)
     ContentPadding.PaddingLeft = UDim.new(0, 15)
-    ContentPadding.PaddingRight = UDim.new(0, 15)
+    ContentPadding.PaddingRight = UDim.new(0, 21)
     ContentPadding.Parent = ContentFrame
     
     -- Переменные
@@ -442,13 +442,14 @@ function Library:CreateWindow(title)
         -- Tab API
         function Tab:AddButton(text, callback)
             local Button = Instance.new("TextButton")
-            Button.Size = UDim2.new(1, 0, 0, 45)
+            Button.Size = UDim2.new(0, 220, 0, 40)
+            Button.Position = UDim2.new(1, -220, 0, 0)
             Button.BackgroundColor3 = Color3.fromRGB(0, 122, 255)
             Button.BorderSizePixel = 0
             Button.Text = text
             Button.TextColor3 = Color3.fromRGB(255, 255, 255)
             Button.Font = Enum.Font.GothamSemibold
-            Button.TextSize = 15
+            Button.TextSize = 14
             Button.Parent = TabContent
             
             local BtnCorner = Instance.new("UICorner")
@@ -461,7 +462,8 @@ function Library:CreateWindow(title)
         function Tab:AddToggle(text, default, callback)
             local ToggleFrame = Instance.new("Frame")
             ToggleFrame.Name = "ToggleFrame"
-            ToggleFrame.Size = UDim2.new(1, 0, 0, 50)
+            ToggleFrame.Size = UDim2.new(0, 220, 0, 45)
+            ToggleFrame.Position = UDim2.new(1, -220, 0, 0)
             ToggleFrame.BackgroundColor3 = isDarkMode and Color3.fromRGB(50, 50, 50) or Color3.fromRGB(240, 240, 240)
             ToggleFrame.BorderSizePixel = 0
             ToggleFrame.Parent = TabContent
@@ -471,20 +473,20 @@ function Library:CreateWindow(title)
             ToggleCorner.Parent = ToggleFrame
             
             local ToggleLabel = Instance.new("TextLabel")
-            ToggleLabel.Size = UDim2.new(1, -70, 1, 0)
-            ToggleLabel.Position = UDim2.new(0, 15, 0, 0)
+            ToggleLabel.Size = UDim2.new(1, -65, 1, 0)
+            ToggleLabel.Position = UDim2.new(0, 12, 0, 0)
             ToggleLabel.BackgroundTransparency = 1
             ToggleLabel.Text = text
             ToggleLabel.TextColor3 = isDarkMode and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(0, 0, 0)
             ToggleLabel.Font = Enum.Font.Gotham
-            ToggleLabel.TextSize = 15
+            ToggleLabel.TextSize = 14
             ToggleLabel.TextXAlignment = Enum.TextXAlignment.Left
             ToggleLabel.TextWrapped = true
             ToggleLabel.Parent = ToggleFrame
             
             local ToggleButton = Instance.new("TextButton")
-            ToggleButton.Size = UDim2.new(0, 50, 0, 28)
-            ToggleButton.Position = UDim2.new(1, -60, 0.5, -14)
+            ToggleButton.Size = UDim2.new(0, 45, 0, 24)
+            ToggleButton.Position = UDim2.new(1, -52, 0.5, -12)
             ToggleButton.BackgroundColor3 = default and Color3.fromRGB(52, 199, 89) or Color3.fromRGB(200, 200, 200)
             ToggleButton.BorderSizePixel = 0
             ToggleButton.Text = ""
@@ -495,8 +497,8 @@ function Library:CreateWindow(title)
             ToggleBtnCorner.Parent = ToggleButton
             
             local ToggleCircle = Instance.new("Frame")
-            ToggleCircle.Size = UDim2.new(0, 22, 0, 22)
-            ToggleCircle.Position = default and UDim2.new(1, -25, 0.5, -11) or UDim2.new(0, 3, 0.5, -11)
+            ToggleCircle.Size = UDim2.new(0, 18, 0, 18)
+            ToggleCircle.Position = default and UDim2.new(1, -21, 0.5, -9) or UDim2.new(0, 3, 0.5, -9)
             ToggleCircle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             ToggleCircle.BorderSizePixel = 0
             ToggleCircle.Parent = ToggleButton
@@ -510,19 +512,20 @@ function Library:CreateWindow(title)
             ToggleButton.MouseButton1Click:Connect(function()
                 toggled = not toggled
                 ToggleButton.BackgroundColor3 = toggled and Color3.fromRGB(52, 199, 89) or Color3.fromRGB(200, 200, 200)
-                ToggleCircle:TweenPosition(toggled and UDim2.new(1, -25, 0.5, -11) or UDim2.new(0, 3, 0.5, -11), "Out", "Quad", 0.2, true)
+                ToggleCircle:TweenPosition(toggled and UDim2.new(1, -21, 0.5, -9) or UDim2.new(0, 3, 0.5, -9), "Out", "Quad", 0.2, true)
                 callback(toggled)
             end)
         end
         
         function Tab:AddLabel(text)
             local Label = Instance.new("TextLabel")
-            Label.Size = UDim2.new(1, 0, 0, 35)
+            Label.Size = UDim2.new(0, 220, 0, 30)
+            Label.Position = UDim2.new(1, -220, 0, 0)
             Label.BackgroundTransparency = 1
             Label.Text = text
             Label.TextColor3 = isDarkMode and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(0, 0, 0)
             Label.Font = Enum.Font.Gotham
-            Label.TextSize = 15
+            Label.TextSize = 14
             Label.TextXAlignment = Enum.TextXAlignment.Left
             Label.TextWrapped = true
             Label.Parent = TabContent
@@ -533,7 +536,8 @@ function Library:CreateWindow(title)
         function Tab:AddTextbox(placeholder, callback)
             local TextboxFrame = Instance.new("Frame")
             TextboxFrame.Name = "TextboxFrame"
-            TextboxFrame.Size = UDim2.new(1, 0, 0, 45)
+            TextboxFrame.Size = UDim2.new(0, 220, 0, 40)
+            TextboxFrame.Position = UDim2.new(1, -220, 0, 0)
             TextboxFrame.BackgroundColor3 = isDarkMode and Color3.fromRGB(50, 50, 50) or Color3.fromRGB(240, 240, 240)
             TextboxFrame.BorderSizePixel = 0
             TextboxFrame.Parent = TabContent
@@ -543,15 +547,15 @@ function Library:CreateWindow(title)
             TextboxCorner.Parent = TextboxFrame
             
             local Textbox = Instance.new("TextBox")
-            Textbox.Size = UDim2.new(1, -24, 1, 0)
-            Textbox.Position = UDim2.new(0, 12, 0, 0)
+            Textbox.Size = UDim2.new(1, -20, 1, 0)
+            Textbox.Position = UDim2.new(0, 10, 0, 0)
             Textbox.BackgroundTransparency = 1
             Textbox.PlaceholderText = placeholder
             Textbox.Text = ""
             Textbox.TextColor3 = isDarkMode and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(0, 0, 0)
             Textbox.PlaceholderColor3 = Color3.fromRGB(150, 150, 150)
             Textbox.Font = Enum.Font.Gotham
-            Textbox.TextSize = 15
+            Textbox.TextSize = 14
             Textbox.TextXAlignment = Enum.TextXAlignment.Left
             Textbox.Parent = TextboxFrame
             
