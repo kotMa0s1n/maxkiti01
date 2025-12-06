@@ -137,8 +137,8 @@ function Library:CreateWindow(title)
     -- Список вкладок (слева)
     local TabsListFrame = Instance.new("ScrollingFrame")
     TabsListFrame.Name = "TabsListFrame"
-    TabsListFrame.Size = UDim2.new(0, 210, 0, 434)
-    TabsListFrame.Position = UDim2.new(0, 8, 0, 58)
+    TabsListFrame.Size = UDim2.new(0, 210, 0, 386)
+    TabsListFrame.Position = UDim2.new(0, 8, 0, 106)
     TabsListFrame.BackgroundColor3 = Color3.fromRGB(245, 245, 245)
     TabsListFrame.BorderSizePixel = 0
     TabsListFrame.ScrollBarThickness = 5
