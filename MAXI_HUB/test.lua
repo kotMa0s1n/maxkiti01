@@ -14,6 +14,7 @@ function Library:CreateWindow(title)
     MainFrame.Position = UDim2.new(0.5, -350, 0.5, -250)
     MainFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     MainFrame.BorderSizePixel = 0
+    MainFrame.ZIndex = 1
     MainFrame.Parent = ScreenGui
     
     local UICorner = Instance.new("UICorner")
@@ -26,6 +27,7 @@ function Library:CreateWindow(title)
     TitleBar.Size = UDim2.new(1, 0, 0, 50)
     TitleBar.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
     TitleBar.BorderSizePixel = 0
+    TitleBar.ZIndex = 10
     TitleBar.Parent = MainFrame
     
     local TitleCorner = Instance.new("UICorner")
@@ -38,6 +40,7 @@ function Library:CreateWindow(title)
     TitleBarBottom.Position = UDim2.new(0, 0, 1, -10)
     TitleBarBottom.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
     TitleBarBottom.BorderSizePixel = 0
+    TitleBarBottom.ZIndex = 10
     TitleBarBottom.Parent = TitleBar
     
     local TitleLabel = Instance.new("TextLabel")
@@ -50,6 +53,7 @@ function Library:CreateWindow(title)
     TitleLabel.Font = Enum.Font.GothamBold
     TitleLabel.TextSize = 18
     TitleLabel.TextXAlignment = Enum.TextXAlignment.Left
+    TitleLabel.ZIndex = 10
     TitleLabel.Parent = TitleBar
     
     -- Кнопки управления окном
@@ -57,6 +61,7 @@ function Library:CreateWindow(title)
     ButtonsFrame.Size = UDim2.new(0, 90, 0, 28)
     ButtonsFrame.Position = UDim2.new(1, -105, 0, 11)
     ButtonsFrame.BackgroundTransparency = 1
+    ButtonsFrame.ZIndex = 10
     ButtonsFrame.Parent = TitleBar
     
     local function CreateWindowButton(color, position, name)
@@ -67,6 +72,7 @@ function Library:CreateWindow(title)
         btn.BackgroundColor3 = color
         btn.BorderSizePixel = 0
         btn.Text = ""
+        btn.ZIndex = 10
         btn.Parent = ButtonsFrame
         
         local corner = Instance.new("UICorner")
@@ -114,6 +120,7 @@ function Library:CreateWindow(title)
     SearchFrame.Position = UDim2.new(0, 8, 0, 58)
     SearchFrame.BackgroundColor3 = Color3.fromRGB(245, 245, 245)
     SearchFrame.BorderSizePixel = 0
+    SearchFrame.ZIndex = 5
     SearchFrame.Parent = MainFrame
     
     local SearchCorner = Instance.new("UICorner")
@@ -132,6 +139,7 @@ function Library:CreateWindow(title)
     SearchBox.Font = Enum.Font.Gotham
     SearchBox.TextSize = 14
     SearchBox.TextXAlignment = Enum.TextXAlignment.Left
+    SearchBox.ZIndex = 5
     SearchBox.Parent = SearchFrame
     
     -- Список вкладок (слева)
@@ -143,6 +151,7 @@ function Library:CreateWindow(title)
     TabsListFrame.BorderSizePixel = 0
     TabsListFrame.ScrollBarThickness = 5
     TabsListFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
+    TabsListFrame.ZIndex = 5
     TabsListFrame.Parent = MainFrame
     
     local TabsCorner = Instance.new("UICorner")
@@ -380,6 +389,7 @@ function Library:CreateWindow(title)
         TabButton.BackgroundColor3 = isDarkMode and Color3.fromRGB(50, 50, 50) or Color3.fromRGB(230, 230, 230)
         TabButton.BorderSizePixel = 0
         TabButton.Text = ""
+        TabButton.ZIndex = 5
         TabButton.Parent = TabsListFrame
         
         local TabBtnCorner = Instance.new("UICorner")
@@ -397,6 +407,7 @@ function Library:CreateWindow(title)
         TabLabel.TextSize = 15
         TabLabel.TextXAlignment = Enum.TextXAlignment.Left
         TabLabel.TextTruncate = Enum.TextTruncate.AtEnd
+        TabLabel.ZIndex = 5
         TabLabel.Parent = TabButton
         
         -- Контент вкладки
@@ -443,13 +454,15 @@ function Library:CreateWindow(title)
         function Tab:AddButton(text, callback)
             local Button = Instance.new("TextButton")
             Button.Size = UDim2.new(0, 220, 0, 40)
-            Button.Position = UDim2.new(1, -220, 0, 0)
+            Button.Position = UDim2.new(1, -235, 0, 0)
+            Button.AnchorPoint = Vector2.new(0, 0)
             Button.BackgroundColor3 = Color3.fromRGB(0, 122, 255)
             Button.BorderSizePixel = 0
             Button.Text = text
             Button.TextColor3 = Color3.fromRGB(255, 255, 255)
             Button.Font = Enum.Font.GothamSemibold
             Button.TextSize = 14
+            Button.ZIndex = 2
             Button.Parent = TabContent
             
             local BtnCorner = Instance.new("UICorner")
@@ -463,9 +476,11 @@ function Library:CreateWindow(title)
             local ToggleFrame = Instance.new("Frame")
             ToggleFrame.Name = "ToggleFrame"
             ToggleFrame.Size = UDim2.new(0, 220, 0, 45)
-            ToggleFrame.Position = UDim2.new(1, -220, 0, 0)
+            ToggleFrame.Position = UDim2.new(1, -235, 0, 0)
+            ToggleFrame.AnchorPoint = Vector2.new(0, 0)
             ToggleFrame.BackgroundColor3 = isDarkMode and Color3.fromRGB(50, 50, 50) or Color3.fromRGB(240, 240, 240)
             ToggleFrame.BorderSizePixel = 0
+            ToggleFrame.ZIndex = 2
             ToggleFrame.Parent = TabContent
             
             local ToggleCorner = Instance.new("UICorner")
@@ -482,6 +497,7 @@ function Library:CreateWindow(title)
             ToggleLabel.TextSize = 14
             ToggleLabel.TextXAlignment = Enum.TextXAlignment.Left
             ToggleLabel.TextWrapped = true
+            ToggleLabel.ZIndex = 2
             ToggleLabel.Parent = ToggleFrame
             
             local ToggleButton = Instance.new("TextButton")
@@ -490,6 +506,7 @@ function Library:CreateWindow(title)
             ToggleButton.BackgroundColor3 = default and Color3.fromRGB(52, 199, 89) or Color3.fromRGB(200, 200, 200)
             ToggleButton.BorderSizePixel = 0
             ToggleButton.Text = ""
+            ToggleButton.ZIndex = 2
             ToggleButton.Parent = ToggleFrame
             
             local ToggleBtnCorner = Instance.new("UICorner")
@@ -501,6 +518,7 @@ function Library:CreateWindow(title)
             ToggleCircle.Position = default and UDim2.new(1, -21, 0.5, -9) or UDim2.new(0, 3, 0.5, -9)
             ToggleCircle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             ToggleCircle.BorderSizePixel = 0
+            ToggleCircle.ZIndex = 2
             ToggleCircle.Parent = ToggleButton
             
             local CircleCorner = Instance.new("UICorner")
@@ -520,7 +538,8 @@ function Library:CreateWindow(title)
         function Tab:AddLabel(text)
             local Label = Instance.new("TextLabel")
             Label.Size = UDim2.new(0, 220, 0, 30)
-            Label.Position = UDim2.new(1, -220, 0, 0)
+            Label.Position = UDim2.new(1, -235, 0, 0)
+            Label.AnchorPoint = Vector2.new(0, 0)
             Label.BackgroundTransparency = 1
             Label.Text = text
             Label.TextColor3 = isDarkMode and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(0, 0, 0)
@@ -528,6 +547,7 @@ function Library:CreateWindow(title)
             Label.TextSize = 14
             Label.TextXAlignment = Enum.TextXAlignment.Left
             Label.TextWrapped = true
+            Label.ZIndex = 2
             Label.Parent = TabContent
             
             return Label
@@ -537,9 +557,11 @@ function Library:CreateWindow(title)
             local TextboxFrame = Instance.new("Frame")
             TextboxFrame.Name = "TextboxFrame"
             TextboxFrame.Size = UDim2.new(0, 220, 0, 40)
-            TextboxFrame.Position = UDim2.new(1, -220, 0, 0)
+            TextboxFrame.Position = UDim2.new(1, -235, 0, 0)
+            TextboxFrame.AnchorPoint = Vector2.new(0, 0)
             TextboxFrame.BackgroundColor3 = isDarkMode and Color3.fromRGB(50, 50, 50) or Color3.fromRGB(240, 240, 240)
             TextboxFrame.BorderSizePixel = 0
+            TextboxFrame.ZIndex = 2
             TextboxFrame.Parent = TabContent
             
             local TextboxCorner = Instance.new("UICorner")
@@ -557,6 +579,7 @@ function Library:CreateWindow(title)
             Textbox.Font = Enum.Font.Gotham
             Textbox.TextSize = 14
             Textbox.TextXAlignment = Enum.TextXAlignment.Left
+            Textbox.ZIndex = 2
             Textbox.Parent = TextboxFrame
             
             Textbox.FocusLost:Connect(function()
